@@ -24,8 +24,7 @@ const TitleText = styled.div`
   display: flex;
   align-items: center;
   letter-spacing: 0.1px;
-
-  color: #855cf8;
+  color: ${props => props.theme.colors.purple[600]};
   margin-bottom: 32px;
 `
 
