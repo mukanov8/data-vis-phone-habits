@@ -2,18 +2,7 @@ import React from 'react'
 
 import Plot from 'react-plotly.js'
 import defaultTheme from '../themes/defaultTheme'
-
-// const colors = [
-//   '#855CF8',
-//   '#004ac2',
-//   '#ff0080',
-//   '#E289F2',
-//   '#503795',
-//   '#ACB9FF',
-//   'rgb(172, 231, 255)',
-//   '#ae99e5',
-//   '#00b7ff',
-// ]
+import { Text } from './shared/Typography'
 
 const AppsBarChart = () => {
   const xData = [60, 55, 49, 36, 30, 25, 20, 17, 14]
@@ -31,30 +20,31 @@ const AppsBarChart = () => {
   ]
   yData.reverse()
   return (
-    <Plot
-      layout={{
-        width: 350,
-        height: 400,
-        title: {
-          text: 'SNS Apps Sorted',
-          font: {
-            family: 'Courier New, monospace',
-            size: 24,
+    <div style={{ textAlign: 'center' }}>
+      <Text>
+        <b>App</b> Selection
+      </Text>
+      <Plot
+        layout={{
+          width: 350,
+          height: 350,
+          title: {
+            text: 'SNS Apps Sorted',
           },
-        },
-      }}
-      data={[
-        {
-          orientation: 'h',
-          y: yData,
-          x: xData,
-          type: 'bar',
-          marker: {
-            color: Object.values(defaultTheme.colors.orange),
+        }}
+        data={[
+          {
+            orientation: 'h',
+            y: yData,
+            x: xData,
+            type: 'bar',
+            marker: {
+              color: Object.values(defaultTheme.colors.orange),
+            },
           },
-        },
-      ]}
-    />
+        ]}
+      />
+    </div>
   )
 }
 
