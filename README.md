@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# A data visualization of phone usage habits
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/29c5beed-4db7-40c0-904f-98f3fd874e94/deploy-status)](https://app.netlify.com/sites/data-vis-phone-habits/deploys)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
