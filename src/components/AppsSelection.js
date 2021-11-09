@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { Text } from './shared/Typography'
+import theme from '../theme'
 
 const MainContainer = styled.div`
   display: flex;
@@ -17,22 +18,20 @@ const GridContainer = styled.div`
 `
 
 const SingleApp = styled.div`
-  ${({ theme }) => css`
-    height: 40px;
-    width: max-content;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 3px 10px;
-    border-radius: 5px;
-    border: 1px solid;
-    background-color: ${theme?.colors.orange[400]};
-    cursor: pointer;
-    :hover {
-      background-color: ${theme?.colors.red[700]};
-      color: ${theme?.colors.red[100]};
-    }
-  `}
+  height: 40px;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 5px;
+  border: 1px solid;
+  background-color: ${theme.colors.orange[400]};
+  cursor: pointer;
+  :hover {
+    background-color: ${theme.colors.red[700]};
+    color: ${theme.colors.red[100]};
+  }
 `
 
 const AppsSelection = ({ selectedApps, removeAppFromSelection }) => {
@@ -44,9 +43,12 @@ const AppsSelection = ({ selectedApps, removeAppFromSelection }) => {
       </Text>
 
       <GridContainer>
-        {selectedApps.map(app => {
+        {selectedApps.map((app, i) => {
           return (
-            <SingleApp onClick={() => removeAppFromSelection(app)}>
+            <SingleApp
+              key={app + i.toString()}
+              onClick={() => removeAppFromSelection(app)}
+            >
               {app}
             </SingleApp>
           )

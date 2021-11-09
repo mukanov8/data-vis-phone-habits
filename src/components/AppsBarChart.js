@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Plot from 'react-plotly.js'
-import defaultTheme from '../themes/defaultTheme'
+import theme from '../theme'
 import { Text } from './shared/Typography'
 
 const AppsBarChart = ({ appType, addAppToSelection }) => {
@@ -50,7 +50,7 @@ const AppsBarChart = ({ appType, addAppToSelection }) => {
           width: 350,
           height: 350,
           title: {
-            text: 'SNS Apps Sorted',
+            text: `${appType} Apps Sorted`,
           },
         }}
         onClick={onClick}
@@ -61,7 +61,7 @@ const AppsBarChart = ({ appType, addAppToSelection }) => {
             x: xData,
             type: 'bar',
             marker: {
-              color: Object.values(defaultTheme.colors.orange),
+              color: Object.values(theme.colors.orange),
             },
           },
         ]}

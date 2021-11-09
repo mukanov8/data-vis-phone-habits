@@ -1,10 +1,12 @@
 import React from 'react'
 
 import Plot from 'react-plotly.js'
-import defaultTheme from '../themes/defaultTheme'
+import theme from '../theme'
 import { Text } from './shared/Typography'
+import { Button, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
+import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 
-const AppsPieChart = ({ setAppType }) => {
+const AppsPieChart = ({ appType, setAppType }) => {
   const labels = ['SNS', 'OS', 'Health', 'Others']
 
   const onClick = data => {
@@ -20,9 +22,38 @@ const AppsPieChart = ({ setAppType }) => {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <Text>
-        App <b>Type</b> Selection
-      </Text>
+      <div>
+        <Text>
+          App <b>Type</b> Selection
+        </Text>
+        <Menu>
+          {({ isOpen }) => (
+            <>
+              <MenuButton
+                my="8px"
+                colorScheme="purple"
+                size="sm"
+                isActive={isOpen}
+                as={Button}
+                rightIcon={isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+              >
+                {appType ?? 'App Type'}
+              </MenuButton>
+              <MenuList>
+                {labels.map((label, i) => (
+                  <MenuItem
+                    key={label + i.toString()}
+                    onClick={() => setAppType(label)}
+                  >
+                    {label}
+                  </MenuItem>
+                ))}
+              </MenuList>
+            </>
+          )}
+        </Menu>
+      </div>
+
       <Plot
         layout={{
           width: 350,
@@ -37,7 +68,7 @@ const AppsPieChart = ({ setAppType }) => {
             values: [40, 23, 17, 20],
             labels: labels,
             marker: {
-              colors: Object.values(defaultTheme.colors.purple),
+              colors: Object.values(theme.colors.purple),
             },
             hoverinfo: 'label+percent',
             type: 'pie',
