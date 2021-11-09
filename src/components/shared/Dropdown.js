@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Dropdown = () => {
-  return <div> Dropdown </div>
+  return <div />
 }
 
 export default Dropdown

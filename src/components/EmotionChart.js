@@ -1,24 +1,24 @@
 import React from 'react'
 
 import Plot from 'react-plotly.js'
-import defaultTheme from '../themes/defaultTheme'
+import { theme } from '../theme'
 
 const EmotionChart = () => {
-  const numOfData = 10;
+  const numOfData = 10
 
-  let randomEmotionalData = [];
-  for(let i=0; i<numOfData; i++){
-    randomEmotionalData.push(Math.random() * 6 - 3);
+  let randomEmotionalData = []
+  for (let i = 0; i < numOfData; i++) {
+    randomEmotionalData.push(Math.random() * 6 - 3)
   }
 
-  const startDate = new Date('1995-12-17T03:24:00');
-  const endDate = new Date('1995-12-31T03:24:00');
-  let gap = endDate.getTime() - startDate.getTime();
-  let dates = [];
-  for(let i=0; i<numOfData; i++){
+  const startDate = new Date('1995-12-17T03:24:00')
+  const endDate = new Date('1995-12-31T03:24:00')
+  let gap = endDate.getTime() - startDate.getTime()
+  let dates = []
+  for (let i = 0; i < numOfData; i++) {
     let tempDate = new Date()
-    tempDate.setTime(startDate.getTime() + gap * (i + 1) / numOfData);
-    dates.push(tempDate);
+    tempDate.setTime(startDate.getTime() + (gap * (i + 1)) / numOfData)
+    dates.push(tempDate)
   }
 
   return (
@@ -34,8 +34,8 @@ const EmotionChart = () => {
           },
         },
         yaxis: {
-          range: [-3, 3]
-        }
+          range: [-3, 3],
+        },
       }}
       data={[
         {
@@ -43,7 +43,7 @@ const EmotionChart = () => {
           x: dates,
           y: randomEmotionalData,
           type: 'scatter',
-          mode: 'lines'
+          mode: 'lines',
         },
       ]}
     />
