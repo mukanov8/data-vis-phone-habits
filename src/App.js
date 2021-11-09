@@ -6,6 +6,7 @@ import AppsBarChart from './components/AppsBarChart'
 import UserTypeChart from './components/UserTypeChart'
 
 import { Heading } from './components/shared/Typography'
+import EmotionChart from './components/EmotionChart'
 
 const MainContainer = styled.div`
   width: 100%;
@@ -32,6 +33,9 @@ function App() {
       </RowContainer>
       <RowContainer>
         <AppsBarChart />
+      </RowContainer>
+      <RowContainer>
+        <EmotionChart />
       </RowContainer>
     </MainContainer>
   )
