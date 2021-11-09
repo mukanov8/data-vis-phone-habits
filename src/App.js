@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import AppsPieChart from './components/AppsPieChart'
 import AppsBarChart from './components/AppsBarChart'
+import EmotionChart from './components/EmotionChart'
 
 const MainContainer = styled.div`
   width: 100%;
@@ -43,6 +44,9 @@ function App() {
       <RowContainer>
         <AppsPieChart />
         <AppsBarChart />
+      </RowContainer>
+      <RowContainer>
+        <EmotionChart />
       </RowContainer>
     </MainContainer>
   )
