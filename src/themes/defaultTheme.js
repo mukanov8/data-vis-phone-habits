@@ -1,6 +1,9 @@
 const defaultTheme = {
   colors: {
-    black: '#000',
+    black: '#191A19',
+    darkgray: '#607D8B',
+    mediumgray: '#8898A0',
+    lightgrey: '#dcdedf',
     pink: {
       900: '#4d003d',
       800: '#660052',
