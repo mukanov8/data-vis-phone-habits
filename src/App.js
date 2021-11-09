@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import styled from 'styled-components'
 import AppsPieChart from './components/AppsPieChart'
@@ -24,15 +24,16 @@ const RowContainer = styled.div`
 `
 
 function App() {
+  const [appType, setAppType] = useState('SNS')
   return (
     <MainContainer>
       <Heading>Users' phone usage habits for SNS marketers </Heading>
       <RowContainer>
         <UserTypeChart />
-        <AppsPieChart />
+        <AppsPieChart setAppType={setAppType} />
       </RowContainer>
       <RowContainer>
-        <AppsBarChart />
+        <AppsBarChart appType={appType} />
       </RowContainer>
       <RowContainer>
         <EmotionChart />

@@ -4,21 +4,31 @@ import Plot from 'react-plotly.js'
 import defaultTheme from '../themes/defaultTheme'
 import { Text } from './shared/Typography'
 
-const AppsBarChart = () => {
-  const xData = [60, 55, 49, 36, 30, 25, 20, 17, 14]
+const AppsBarChart = ({ appType }) => {
+  const getRandInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min)) + min
+  }
+
+  const xData = [...Array(9)].map((_, rowIndex) => getRandInt(0, 100))
+
   xData.sort()
-  const yData = [
-    'Kakao Talk',
-    'Instagram',
-    'YouTube',
-    'Naver',
-    'Facebook',
-    'Vkontakte',
-    'Reddit',
-    'Bluedit',
-    'Greendit',
-  ]
-  yData.reverse()
+  const yData = {
+    SNS: [
+      'Greendit',
+      'Bluedit',
+      'Reddit',
+      'Vkontakte',
+      'Facebook',
+      'Naver',
+      'Kakao Talk',
+      'Instagram',
+      'YouTube',
+    ],
+    OS: ['Camera', 'Gallery', 'Notes', 'Compass'],
+    Health: ['Samsung Health', 'Runkeeper', 'Strava', 'Stridekick'],
+    Others: ['KaspiKz', 'Woori Bank', 'Toggl', 'Notion'],
+  }
+
   return (
     <div style={{ textAlign: 'center' }}>
       <Text>
@@ -35,7 +45,7 @@ const AppsBarChart = () => {
         data={[
           {
             orientation: 'h',
-            y: yData,
+            y: yData[appType],
             x: xData,
             type: 'bar',
             marker: {

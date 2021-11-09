@@ -4,7 +4,20 @@ import Plot from 'react-plotly.js'
 import defaultTheme from '../themes/defaultTheme'
 import { Text } from './shared/Typography'
 
-const AppsPieChart = () => {
+const AppsPieChart = ({ setAppType }) => {
+  const labels = ['SNS', 'OS', 'Health', 'Others']
+
+  const onClick = data => {
+    // console.log('interaction', data)
+    var pn = ''
+    console.log(data.points)
+    for (var i = 0; i < data.points.length; i++) {
+      pn = data.points[i].pointNumber
+    }
+    console.log('clicked on', labels[pn])
+    setAppType(labels[pn])
+  }
+
   return (
     <div style={{ textAlign: 'center' }}>
       <Text>
@@ -18,10 +31,11 @@ const AppsPieChart = () => {
             text: 'App Usage Statistic of Moderate User',
           },
         }}
+        onClick={onClick}
         data={[
           {
             values: [40, 23, 17, 20],
-            labels: ['SNS', 'OS', 'Health', 'Others'],
+            labels: labels,
             marker: {
               colors: Object.values(defaultTheme.colors.purple),
             },
