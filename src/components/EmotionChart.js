@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Plot from 'react-plotly.js'
-import defaultTheme from '../themes/defaultTheme'
 
 const EmotionChart = () => {
   const numOfData = 20;

@@ -1,24 +1,45 @@
 import React from 'react'
 
 import Plot from 'react-plotly.js'
-import defaultTheme from '../themes/defaultTheme'
+import theme from '../theme'
 import { Text } from './shared/Typography'
 
-const AppsBarChart = () => {
-  const xData = [60, 55, 49, 36, 30, 25, 20, 17, 14]
+const AppsBarChart = ({ appType, addAppToSelection }) => {
+  const getRandInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min)) + min
+  }
+
+  const xData = [...Array(9)].map((_, rowIndex) => getRandInt(0, 100))
+
   xData.sort()
-  const yData = [
-    'Kakao Talk',
-    'Instagram',
-    'YouTube',
-    'Naver',
-    'Facebook',
-    'Vkontakte',
-    'Reddit',
-    'Bluedit',
-    'Greendit',
-  ]
-  yData.reverse()
+  const yData = {
+    SNS: [
+      'Greendit',
+      'Bluedit',
+      'Reddit',
+      'Vkontakte',
+      'Facebook',
+      'Naver',
+      'Kakao Talk',
+      'Instagram',
+      'YouTube',
+    ],
+    OS: ['Camera', 'Gallery', 'Notes', 'Compass'],
+    Health: ['Samsung Health', 'Runkeeper', 'Strava', 'Stridekick'],
+    Others: ['KaspiKz', 'Woori Bank', 'Toggl', 'Notion'],
+  }
+
+  const onClick = data => {
+    // console.log('interaction', data)
+    var pn = ''
+    console.log(data.points)
+    for (var i = 0; i < data.points.length; i++) {
+      pn = data.points[i].pointNumber
+    }
+    console.log('clicked on', yData[appType][pn])
+    addAppToSelection(yData[appType][pn])
+  }
+
   return (
     <div style={{ textAlign: 'center' }}>
       <Text>
@@ -29,17 +50,18 @@ const AppsBarChart = () => {
           width: 350,
           height: 350,
           title: {
-            text: 'SNS Apps Sorted',
+            text: `${appType} Apps Sorted`,
           },
         }}
+        onClick={onClick}
         data={[
           {
             orientation: 'h',
-            y: yData,
+            y: yData[appType],
             x: xData,
             type: 'bar',
             marker: {
-              color: Object.values(defaultTheme.colors.orange),
+              color: Object.values(theme.colors.orange),
             },
           },
         ]}

@@ -2,17 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import { ThemeProvider } from 'styled-components'
-import GlobalStyle from './themes/globalStyle'
-import defaultTheme from './themes/defaultTheme'
+import theme from './theme'
 import './styles/index.css'
+import { ChakraProvider } from '@chakra-ui/react'
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={defaultTheme}>
-      <GlobalStyle />
+    <ChakraProvider theme={theme}>
       <App />
-    </ThemeProvider>
+    </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )
