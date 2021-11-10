@@ -66,9 +66,6 @@ function App() {
       <RowContainer>
         <EmotionChart />
       </RowContainer>
-      <RowContainer>
-        <EmotionChart />
-      </RowContainer>
     </MainContainer>
   )
 }
