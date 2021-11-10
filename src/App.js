@@ -7,6 +7,7 @@ import UserTypeChart from './components/UserTypeChart'
 
 import { Heading } from './components/shared/Typography'
 import EmotionChart from './components/EmotionChart'
+import AppsSelection from './components/AppsSelection'
 
 const MainContainer = styled.div`
   width: 100%;
@@ -25,6 +26,19 @@ const RowContainer = styled.div`
 
 function App() {
   const [appType, setAppType] = useState('SNS')
+  const [selectedApps, setSelectedApps] = useState([])
+
+  const addAppToSelection = appName => {
+    if (!selectedApps.includes(appName)) {
+      // if it's not already added
+      setSelectedApps([...selectedApps, appName])
+    }
+  }
+
+  const removeAppFromSelection = appName => {
+    setSelectedApps(selectedApps.filter(app => app !== appName))
+  }
+
   return (
     <MainContainer>
       <Heading>Users' phone usage habits for SNS marketers </Heading>
@@ -33,7 +47,11 @@ function App() {
         <AppsPieChart setAppType={setAppType} />
       </RowContainer>
       <RowContainer>
-        <AppsBarChart appType={appType} />
+        <AppsBarChart appType={appType} addAppToSelection={addAppToSelection} />
+        <AppsSelection
+          selectedApps={selectedApps}
+          removeAppFromSelection={removeAppFromSelection}
+        />
       </RowContainer>
       <RowContainer>
         <EmotionChart />

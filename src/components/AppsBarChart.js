@@ -4,7 +4,7 @@ import Plot from 'react-plotly.js'
 import defaultTheme from '../themes/defaultTheme'
 import { Text } from './shared/Typography'
 
-const AppsBarChart = ({ appType }) => {
+const AppsBarChart = ({ appType, addAppToSelection }) => {
   const getRandInt = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min
   }
@@ -29,6 +29,17 @@ const AppsBarChart = ({ appType }) => {
     Others: ['KaspiKz', 'Woori Bank', 'Toggl', 'Notion'],
   }
 
+  const onClick = data => {
+    // console.log('interaction', data)
+    var pn = ''
+    console.log(data.points)
+    for (var i = 0; i < data.points.length; i++) {
+      pn = data.points[i].pointNumber
+    }
+    console.log('clicked on', yData[appType][pn])
+    addAppToSelection(yData[appType][pn])
+  }
+
   return (
     <div style={{ textAlign: 'center' }}>
       <Text>
@@ -42,6 +53,7 @@ const AppsBarChart = ({ appType }) => {
             text: 'SNS Apps Sorted',
           },
         }}
+        onClick={onClick}
         data={[
           {
             orientation: 'h',
