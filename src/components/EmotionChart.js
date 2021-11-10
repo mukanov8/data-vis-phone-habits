@@ -1,18 +1,22 @@
 import React from 'react'
-
 import Plot from 'react-plotly.js'
-import { theme } from '../theme'
+import theme from '../theme'
 
 const EmotionChart = () => {
-  const numOfData = 10
+  const numOfData = 20
 
   let randomEmotionalData = []
   for (let i = 0; i < numOfData; i++) {
     randomEmotionalData.push(Math.random() * 6 - 3)
   }
 
-  const startDate = new Date('1995-12-17T03:24:00')
-  const endDate = new Date('1995-12-31T03:24:00')
+  let randomAppUsageHistogramData = []
+  for (let i = 0; i < 100; i++) {
+    randomAppUsageHistogramData.push(Math.random() * 100)
+  }
+
+  const startDate = new Date('2020-12-17T03:24:00')
+  const endDate = new Date('2020-12-27T03:24:00')
   let gap = endDate.getTime() - startDate.getTime()
   let dates = []
   for (let i = 0; i < numOfData; i++) {
@@ -21,33 +25,120 @@ const EmotionChart = () => {
     dates.push(tempDate)
   }
 
-  return (
-    <Plot
-      layout={{
-        width: 60 * numOfData,
-        height: 400,
-        title: {
-          text: 'Emotional Average Score by Time',
-          font: {
-            family: 'Courier New, monospace',
-            size: 24,
-          },
+  let plot1 = {
+    x: dates,
+    y: randomAppUsageHistogramData,
+    type: 'bar',
+    mode: 'lines',
+    marker: {
+      color: theme.colors.blue[600],
+    },
+  }
+
+  let plot2 = {
+    x: dates,
+    y: randomEmotionalData,
+    yaxis: 'y2',
+    type: 'scatter',
+    mode: 'lines',
+    marker: {
+      color: theme.colors.darkblue[400],
+    },
+  }
+
+  let emoData = [plot1, plot2]
+
+  let emoLayout = {
+    width: 30 * numOfData,
+    height: 700,
+    showlegend: false,
+    // title: {
+    //   text: 'App Usage Histogram',
+    //   font: {
+    //     family: 'Courier New, monospace',
+    //     size: 24,
+    //   },
+    // },
+    xaxis: {
+      tickangle: 90,
+      tickformat: '%Y-%m-%d',
+      tickfont: {
+        family: 'Courier New, monospace',
+        size: 10,
+      },
+      tickmode: 'linear',
+      // rangeslider: {}
+    },
+    yaxis1: {
+      domain: [0.7, 1],
+      range: [0, 100],
+      fixedrange: true,
+    },
+    yaxis2: {
+      domain: [0, 0.5],
+      range: [-3, 3],
+      fixedrange: true,
+    },
+    grid: {
+      rows: 2,
+      columns: 1,
+      pattern: 'independent',
+    },
+    annotations: [
+      {
+        text: 'App Usage Histogram',
+        xref: 'x domain',
+        yref: 'y',
+        x: 0.5,
+        y: 0,
+        yshift: 230,
+        showarrow: false,
+        font: {
+          size: 14,
         },
-        yaxis: {
-          range: [-3, 3],
+      },
+      {
+        text: 'Emotional Average Score by Time',
+        xref: 'x domain',
+        yref: 'y',
+        x: 0.5,
+        y: 0,
+        yshift: -90,
+        showarrow: false,
+        font: {
+          size: 14,
         },
-      }}
-      data={[
-        {
-          // orientation: 'h',
-          x: dates,
-          y: randomEmotionalData,
-          type: 'scatter',
-          mode: 'lines',
-        },
-      ]}
-    />
-  )
+      },
+      // {
+      //   text: 'App Usage Histogram',
+      //   xref: 'x domain',
+      //   yref: 'y',
+      //   x: 0,
+      //   y: 0,
+      //   yshift: 230,
+      //   showarrow: false,
+      //   font: {
+      //     family: 'Courier New, monospace',
+      //     size: 16,
+      //   },
+      // },
+      // {
+      //   text: 'Emotional Average Score by Time',
+      //   xref: 'x domain',
+      //   yref: 'y',
+      //   x: 0,
+      //   y: 0,
+      //   yshift: -70,
+      //   showarrow: false,
+      //   font: {
+      //     family: 'Courier New, monospace',
+      //     size: 16,
+      //   },
+      // },
+    ],
+  }
+
+  return <Plot layout={emoLayout} data={emoData} />
 }
 
 export default EmotionChart

@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import Plot from 'react-plotly.js'
 import theme from '../theme'
 import { Text } from './shared/Typography'
-// import Dropdown from './shared/Dropdown'
 import { Button, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 

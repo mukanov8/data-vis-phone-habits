@@ -7,6 +7,7 @@ import UserTypeChart from './components/UserTypeChart'
 
 import { Heading } from './components/shared/Typography'
 import EmotionChart from './components/EmotionChart'
+
 import AppsSelection from './components/AppsSelection'
 import { useColorMode } from '@chakra-ui/react'
 
