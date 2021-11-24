@@ -3,33 +3,43 @@ import Plot from 'react-plotly.js'
 import { X_AXIS_HOURLY } from './../constants'
 import { Text } from './shared/Typography'
 
-const AppUsageEmotionChart = ({ selectedApps }) => {
+const AppUsageEmotionChart = ({ selectedApps, appUsageByHour }) => {
   const data = []
   const len = X_AXIS_HOURLY.length
-  console.log({ selectedApps })
-  selectedApps.forEach((app, i) => {
-    if (i > 0) {
-      data.push({
-        x: X_AXIS_HOURLY,
-        y: Array(len)
-          .fill()
-          .map((_, i) => i + app.value),
-        type: 'bar',
-        name: app.name,
-        marker: {
-          color: app.color,
-        },
-      })
-    }
+
+  console.log(appUsageByHour)
+  selectedApps.forEach(app => {
+    data.push({
+      x: X_AXIS_HOURLY,
+      y: appUsageByHour[app.name],
+      type: 'bar',
+      name: app.name,
+      marker: {
+        color: app.color,
+      },
+    })
   })
+  // filteredData.forEach((app, i) => {
+  //   if (i > 0) {
+  //     data.push({
+  //       x: X_AXIS_HOURLY,
+  //       y: filteredData?.map(app => parseInt(app.user_count)),
+  //       type: 'bar',
+  //       name: app.name,
+  //       marker: {
+  //         color: app.color,
+  //       },
+  //     })
+  //   }
+  // })
 
   const layout = {
-    barmode: 'stack',
+    barmode: 'group',
     width: 400,
     height: 350,
     title: {
       text: `Hourly ${
-        selectedApps.length > 2 ? 'Apps' : 'App'
+        selectedApps.length > 1 ? 'Apps' : 'App'
       } Usage Histogram `,
     },
   }
@@ -39,7 +49,7 @@ const AppUsageEmotionChart = ({ selectedApps }) => {
       <Text>
         Selected App <b>Usage</b>
       </Text>
-      {selectedApps.length > 1 && <Plot layout={layout} data={data} />}
+      <Plot layout={layout} data={data} />
     </div>
   )
 }
