@@ -1,0 +1,828 @@
+,Count,name,appType
+775,78,패키지 설치 프로그램,others
+253,78,Polar Beat,others
+242,78,Paco,others
+562,78,설정,others
+491,78,메시지,others
+727,78,카카오톡,sns
+366,77,YouTube,others
+133,76,Google Play 서비스,others
+134,76,Google Play 스토어,others
+716,76,카메라,others
+191,75,Logger,others
+391,74,갤러리,others
+86,73,Dropsync,others
+7,69,ABC Logger,others
+736,60,캘린더,others
+452,59,드라이브,others
+587,58,시스템 UI,others
+700,56,접근성,others
+128,56,Google,others
+68,56,Chrome,others
+585,52,시계,others
+607,51,안드로이드 시스템,others
+699,51,전화,others
+106,48,Facebook,sns
+394,46,계산기,others
+552,46,삼성 인터넷,others
+415,46,날씨,others
+151,46,Instagram,sns
+210,43,Microsoft Band,others
+170,42,KLMS,others
+757,41,토스,others
+279,40,Samsung Experience 홈,others
+286,38,Samsung Pay,others
+127,36,Gmail,others
+640,35,연락처,others
+673,34,원터치개인,others
+418,33,내 파일,others
+427,32,네이버 웹툰,others
+428,32,네이버 지도,others
+675,31,원터치알림,others
+510,29,밥대생,others
+204,29,Messenger,sns
+211,29,Microsoft Health,others
+707,29,지도,others
+540,28,비디오 플레이어,others
+156,28,KAIST	Portal,others
+768,27,파일,others
+543,27,빅스비 보이스,others
+719,27,카카오 T,others
+721,27,카카오뱅크,others
+217,26,NAVER,sns
+634,26,에브리타임,sns
+28,25,Android 시스템,others
+356,24,Wi-Fi,others
+808,24,한컴오피스 viewer,others
+553,24,삼성 캡처,others
+283,23,Samsung Notes,others
+227,23,Netflix,others
+743,23,코레일톡,others
+788,22,프레젠테이션,others
+66,22,CaptivePortalLogin,others
+670,22,원스토어,others
+612,22,알람/시계,others
+759,22,통화 관리,others
+48,21,Bluetooth,others
+158,21,KAIST Library,others
+406,21,기본홈,others
+336,20,T전화,others
+514,20,배달의민족,others
+280,20,Samsung Health,others
+683,19,음성 녹음,others
+720,19,카카오맵,others
+703,19,주소록,others
+747,18,쿠팡,shopping
+323,18,The Day Before,others
+454,18,디바이스 케어,others
+689,18,이메일,others
+233,18,One UI 홈,others
+203,18,Melon,others
+783,18,포토 에디터,others
+589,18,시외버스	모바일,others
+264,17,Q메모+,others
+662,17,우리카드,others
+782,16,포토,others
+146,16,ISP/페이북,others
+395,16,고속버스 모바일,others
+555,15,삼성 키보드,others
+583,15,스프레드시트,others
+360,15,Word,others
+767,15,파인더,others
+392,15,게임런처,others
+761,15,통화 화면,others
+758,15,통화,others
+237,14,PASS,others
+115,14,Foodie,others
+508,14,미세미세,others
+98,14,Excel,others
+334,14,T멤버십,others
+565,14,소프트웨어 업데이트,others
+294,14,Shutdown Monitor,others
+318,14,T world,others
+39,14,BAND,sns
+177,13,LG 키보드,others
+254,13,Polaris Office,others
+517,13,뱅크샐러드,others
+453,12,디바이스 관리,others
+503,12,문서,others
+684,12,음악,others
+285,12,Samsung Pass 자동 완성,others
+729,12,카카오페이지,others
+17,12,AhnLab V3 Mobile Plus 2.0,others
+274,12,SR 고속열차,others
+271,12,SNOW,others
+434,11,네트워크,others
+282,11,Samsung Music,others
+197,11,MTP 애플리케이션,others
+697,10,잠금화면 설정,others
+429,10,네이버 카페,sns
+624,10,야놀자,others
+367,10,YouTube Music,others
+257,10,PowerPoint,others
+272,10,SODA,others
+320,10,T 안심,others
+769,10,파일 관리자,others
+821,10,후후,others
+474,10,리마인더,others
+544,10,빅스비 비전,others
+122,9,Galaxy Store,others
+619,9,알파카,others
+130,9,Google Play 게임,others
+338,9,U+ 고객센터,others
+297,9,Slack,sns
+243,8,Papago,others
+672,8,원스토어 서비스,others
+303,8,Smart​Things,others
+765,8,티몬,others
+238,8,PAYCO,others
+450,8,동영상,others
+278,8,Samsung Experience Service,others
+591,8,신한 쏠(SOL),others
+53,8,CGV,others
+15,7,Adobe Acrobat,others
+513,7,배달요기요,shopping
+178,7,LG 페이,others
+259,7,Puffin,others
+172,7,KT 멤버십,others
+38,7,B612,others
+85,7,Dropbox,others
+57,7,CLASSUM,sns
+711,7,지하철종결자,others
+677,7,위메프,shopping
+398,7,고음질 녹음,others
+293,7,Settings Suggestions,others
+764,7,트위터,sns
+592,7,신한카드,others
+316,7,T map,others
+480,6,마이 케이티,others
+58,6,CLiP,others
+722,6,카카오버스,others
+190,6,LoL 프렌즈,others
+199,6,MX 플레이어,others
+468,6,롯데시네마,others
+333,6,Twitch,sns
+527,6,보안 폴더,others
+579,6,스타벅스,shopping
+803,6,한국장학재단,others
+73,6,Cookie Run: OvenBreak,others
+3,6,11번가,shopping
+424,6,네이버 사전,others
+97,6,Evernote,others
+521,6,벅스,others
+756,5,텔레그램,sns
+712,5,직방,others
+345,5,VIBE,others
+131,5,Google Play 뮤직,others
+702,5,좋은 카메라,others
+724,5,카카오스토리,sns
+459,5,똑똑가계부,others
+16,5,AfreecaTV,sns
+545,5,빅스비 홈,others
+64,5,CamScanner,others
+349,5,VpnDialogs,others
+706,5,지니 뮤직,others
+41,5,Between,others
+370,5,Zenly,others
+462,5,러브데이,others
+822,5,후후-유플러스,others
+780,5,편한가계부,others
+733,5,캐시워크,others
+617,4,알송,others
+329,4,TouchWiz 홈,others
+231,4,OP.GG,others
+495,4,모바일교보문고,shopping
+314,4,S보이스,others
+230,4,OK Cashbag,others
+379,4,oksusu,others
+56,4,CJ대한통운 택배,others
+8,4,AIA Vitality T건강걷기,others
+523,4,번역,others
+679,4,위비톡,others
+813,4,해피포인트,others
+361,4,Workspace,others
+487,4,메모,others
+512,4,배경화면,others
+340,4,U+멤버스,others
+55,4,CJ ONE,shopping
+804,4,한국투자	주식,others
+335,4,T연락처,others
+694,4,인쇄 스풀러,others
+799,4,하나1Q페이,others
+51,4,Briefing,others
+654,4,올원뱅크,others
+123,4,Galaxy Themes,others
+615,4,알바몬,others
+466,4,롯데리아,others
+137,4,G마켓,shopping
+164,4,KB스타알림,others
+78,4,Discord,sns
+135,4,Google 뉴스,others
+718,4,카이스트 버스,others
+610,4,알라미,others
+574,4,스마트택배,others
+432,4,네이버TV,others
+439,4,다음웹툰,others
+152,4,Intra,others
+734,3,캔디카메라,others
+343,3,ULike,others
+638,3,에이블리,shopping
+168,3,KFTC FIDO LINK,others
+688,3,이마트몰,shopping
+637,3,에어비앤비,shopping
+423,3,네이버 블로그,sns
+422,3,네이버 뮤직,others
+595,3,싸이메라,others
+421,3,네이버 메일,others
+25,3,Always-on display,others
+252,3,Pokémon GO,others
+22,3,AliExpress,shopping
+639,3,여기어때,others
+464,3,레진코믹스,others
+163,3,KB스타뱅킹,others
+104,3,FLO,others
+678,3,위비뱅크,others
+161,3,KB국민카드,others
+93,3,Edge screen,others
+159,3,KAIST 전자식복무관리시스템,others
+281,3,Samsung Members,others
+94,3,EhViewer,others
+740,3,컬쳐랜드,others
+430,3,네이버 캘린더,others
+596,3,쏘카,others
+288,3,Samsung account,others
+175,3,L.POINT,others
+455,3,디시인사이드,sns
+437,3,다음,sns
+708,3,지퍼7,others
+570,3,스마트 닥터,others
+120,3,GGtics,others
+200,3,MangoPlate,others
+198,3,MUSINSA,shopping
+476,3,리브,others
+389,3,自走棋测试服,others
+234,3,OneDrive,others
+401,3,국세청 홈택스,others
+760,3,통화 서비스,others
+723,3,카카오스탁,others
+403,3,궁극의 질문,others
+309,3,Steam,sns
+728,3,카카오톡 치즈,others
+665,3,우체국 스마트뱅킹,others
+372,3,brunch,sns
+594,3,실행 프로그램,others
+251,3,Pinterest,others
+71,3,Clean Master,others
+448,2,더캠프,others
+327,2,Todoist,others
+536,2,블루투스,others
+326,2,TimeTree,others
+446,2,대전버스,others
+347,2,Vivino,shopping
+533,2,브랜디,shopping
+436,2,다방,others
+444,2,당근마켓,shopping
+653,2,올레 tv 모바일,others
+586,2,시리즈,others
+435,2,다나와 가격비교,shopping
+535,2,브롤스타즈,others
+593,2,신한페이판,others
+643,2,영웅문S,others
+613,2,알람몬,others
+548,2,사운드 선택기,others
+352,2,Wahoo,others
+528,2,보이스 케어,others
+490,2,메모장,others
+482,2,마카롱,shopping
+493,2,모바일	티머니,others
+494,2,모바일결제 ISP,others
+400,2,과학적인 계산기,others
+618,2,알집,others
+622,2,앱 업데이트,others
+469,2,롯데홈쇼핑,shopping
+409,2,김과외,others
+558,2,삼성카드,others
+601,2,아이디어스,others
+504,2,문피아,others
+506,2,미디어 저장소,others
+417,2,내 캘린더,others
+625,2,어드벤처,others
+599,2,아만다,others
+631,2,업비트,others
+554,2,삼성 클라우드,others
+420,2,넌얼마나쓰니,others
+580,2,스터디헬퍼,others
+551,2,삼성 음성 입력,others
+519,2,버스타고,others
+486,2,메가박스,others
+522,2,번개장터,shopping
+597,2,쏠캘린더,others
+547,2,사용자 휴대폰 도우미,others
+354,2,WeChat,sns
+0,2,0한동,others
+539,2,비디오 에디터,others
+741,2,컴프야2019,others
+730,2,카톡 프리뷰,others
+726,2,카카오택시,others
+725,2,카카오지하철,others
+188,2,Lite,others
+193,2,Lysn,sns
+194,2,M-able,others
+205,2,Messenger Lite,sns
+207,2,Mi Fit,others
+208,2,Mi Home,others
+715,2,첫화면 상식,others
+215,2,Most,others
+219,2,NFC,others
+220,2,NFC 서비스,others
+223,2,NH콕뱅크,others
+102,2,FIFA Mobile,others
+224,2,NUGU,others
+705,2,지그재그,shopping
+232,2,OTP,others
+790,2,프렌즈타운,others
+50,2,Brawl Stars,others
+181,2,LINE,sns
+732,2,캐시슬라이드 스텝업,others
+797,2,픽테일 - NewYork,others
+174,2,Kahoot!,others
+766,2,티켓링크,others
+109,2,FatSecret,others
+110,2,Firefox,others
+763,2,트리플,others
+121,2,Galaxy Buds,others
+125,2,Gear S PlugIn,others
+95,2,EmergencyManagerService,others
+91,2,ES 파일 탐색기,others
+139,2,HTML 뷰어,others
+749,2,크루비,shopping
+748,2,퀵 비디오 편집기,others
+746,2,콴다 선생님,others
+87,2,Duel Links,others
+149,2,InBody,others
+659,2,왓챠,others
+84,2,Droid-X 3.0,others
+157,2,KAIST GenChem,others
+166,2,KEB 하나은행,others
+173,2,KT 패밀리박스,others
+49,2,Booking.com,shopping
+103,2,FIFA Online 4 M,others
+24,2,Always On Display,others
+674,2,원터치개인 삼성페이,others
+667,2,원격 데스크톱,others
+30,2,Apps edge,others
+816,2,헬로마켓,shopping
+277,2,Samsung ApexService,others
+680,2,위키백과,others
+18,2,AhnLab V3 Mobile Security,others
+310,2,Study,others
+290,2,Security Master,others
+35,2,Authentication Framework,others
+687,2,이랜드몰,shopping
+36,2,Auto Chess,others
+802,2,하스스톤,others
+284,2,Samsung Pass,others
+660,2,왓챠플레이,others
+801,2,하나카드,others
+800,2,하나멤버스,others
+261,2,QR 코드 스캐너,others
+300,2,Smart View,others
+319,2,T 가드,others
+312,2,Suunto,others
+296,2,Skyscanner,others
+578,1,스카이피플,others
+812,1,해피스크린,others
+576,1,스와이프,others
+814,1,행아웃,others
+776,1,패키지 설치기,others
+577,1,스와이프 벽돌깨기,others
+575,1,스마트헌혈,others
+815,1,헤이카카오,others
+817,1,현대카드,others
+546,1,빅토(VicTo) Google,others
+798,1,핑크다이어리,others
+774,1,팟빵,others
+771,1,파일노리,others
+825,1,휴대폰 인증서 서비스,others
+824,1,휴대폰,others
+770,1,파일 보내기 및 받기,others
+823,1,휴대전화,others
+584,1,슬립 베터,others
+820,1,화해,sns
+582,1,스트리트 뷰,others
+818,1,현대해상,others
+581,1,스텔라 브라우저,others
+772,1,파일탐색기,others
+541,1,비씨카드,others
+542,1,비주얼 가계부,others
+773,1,팝콘티비,others
+777,1,펀드슈퍼마켓,others
+819,1,호갱노노,others
+572,1,스마트 스캔,others
+811,1,해커스인강	챔프스터디,others
+794,1,피망 뉴맞고,others
+806,1,한컴오피스,others
+805,1,한국투자증권,others
+791,1,프렌즈타워,others
+563,1,성경,others
+792,1,프렌즈팝콘,others
+793,1,플레이윙즈,others
+795,1,피키캐스트,others
+787,1,프라임 영한한영,others
+561,1,서울스토어,shopping
+560,1,서머너즈 워,others
+559,1,삼성카드	taptap,others
+796,1,피트니스,others
+557,1,삼성앱카드,others
+556,1,삼성 키보드 뉴럴 베타,others
+789,1,프렌즈레이싱,others
+807,1,한컴오피스 S 뷰어,others
+778,1,페이트/그랜드오더,others
+784,1,포토스캐너,others
+810,1,해먹남녀,others
+573,1,스마트명세서,others
+779,1,펜타스톰,others
+571,1,스마트 설정,others
+781,1,포코포코,others
+549,1,사운드코르셋 튜너 & 메트로놈,others
+569,1,스마일페이,others
+786,1,프라이빗 모드,others
+809,1,한컴오피스 한글 뷰어,others
+785,1,퓨처파이트,others
+550,1,사전,others
+568,1,스냅스,others
+567,1,숨고,shopping
+566,1,수탉 알람시계,others
+564,1,성경일독Q,others
+658,1,와디즈,others
+762,1,튜브박스,others
+676,1,웹소설 조아라,others
+641,1,연락처와 다이얼,others
+681,1,윈드러너Z,others
+538,1,비디오,others
+685,1,음악 플레이어,others
+686,1,이동거리,others
+636,1,에어 커맨드,others
+635,1,에스티엘,others
+690,1,이미지 사이즈,others
+691,1,이미지 용량 줄이기,others
+633,1,에브리싱,others
+632,1,에뛰드하우스,others
+692,1,이사만루 2019,others
+693,1,이퀄라이저,others
+695,1,인터파크,shopping
+630,1,업데이트 센터,others
+629,1,얼리버드 알람,others
+628,1,얼굴인식 체험판,others
+642,1,엽기떡볶이,others
+644,1,영웅문SG 베타,others
+588,1,시스템 런처,others
+645,1,예스24 도서,others
+657,1,옷잘남,shopping
+656,1,올원페이	(앱카드),others
+655,1,올원페이	(NH앱카드),others
+661,1,요금안내서 Bill Letter,others
+663,1,우리페이,others
+652,1,옥션,shopping
+664,1,우먼스톡,shopping
+666,1,워너비스톤,others
+651,1,오목,others
+668,1,원기날씨,others
+650,1,오먹상점,shopping
+669,1,원더락,others
+649,1,오락_OK캐쉬백,others
+648,1,오디오클립,others
+647,1,오늘하루,others
+671,1,원스토어 북스,others
+646,1,오늘의집,sns
+627,1,어시스턴트,others
+626,1,어스,others
+696,1,자산관리,others
+698,1,전광판 LED,others
+600,1,아웃 포커스,others
+731,1,캐시슬라이드,others
+735,1,캔디팡:쥬시월드,others
+598,1,씀,others
+737,1,캠퍼스팅,others
+738,1,커플릿,others
+739,1,컬러노트,others
+742,1,코디북,others
+744,1,코인뷰,others
+745,1,콘텐츠 잠금,others
+750,1,클래시 로얄,others
+751,1,클리너,others
+752,1,키작은남자,others
+753,1,타이젬 바둑,others
+590,1,시크릿라벨,shopping
+754,1,타임스프레드,others
+755,1,텍뷰,others
+602,1,아이모,others
+603,1,아이쉐어링,others
+604,1,아이즈원 오늘 뭐 했니?,others
+710,1,지하철 노선도,others
+701,1,정부24,others
+623,1,야구친구,sns
+704,1,중고나라,shopping
+621,1,앱 설치 마법사,others
+620,1,애니메이션 사진 위젯,others
+616,1,알바천국,others
+709,1,지퍼7 2.0,others
+614,1,알람이,others
+605,1,아이즈원 프라이빗 메일,others
+713,1,착한음악,others
+714,1,챌린저스,others
+611,1,알람/시간,others
+717,1,카이스트 모바일 메일,others
+609,1,알라딘,others
+608,1,안전 지킴이,others
+606,1,안다르,others
+682,1,유니콘,others
+413,1,나만의냉장고,others
+537,1,비둘기키우기,others
+534,1,브로콜리,others
+167,1,KFC,others
+169,1,KIA고객앱,others
+171,1,KM플레이어 Pro,others
+176,1,LG 앱 이용약관,others
+179,1,LG 헬스,others
+180,1,LH청약센터,others
+182,1,LIVE스코어,others
+183,1,Lapse,others
+184,1,Last Arrows,others
+185,1,Leaone,others
+186,1,Life360,others
+187,1,LightSlinger,others
+189,1,LoL 상점,shopping
+192,1,LookPin,shopping
+195,1,MAXIM KOREA HD,others
+165,1,KB앱카드,others
+162,1,KB스마트원 통합인증,others
+160,1,KBO STATS,others
+143,1,Hentoid,others
+132,1,Google Play 북,others
+136,1,Google 팟캐스트,others
+138,1,H&M,others
+140,1,HTV 3.4.6,others
+141,1,Habitica,others
+142,1,HackersMP3,others
+144,1,Hue,others
+155,1,Just Dance Now,others
+145,1,HwModuleTest,others
+147,1,IV Go,others
+148,1,Image 2 Wallpaper,others
+150,1,InCallUI,others
+153,1,JAM Live,others
+154,1,JEFIT,others
+196,1,MLB9이닝스19,others
+201,1,Medium,others
+202,1,Meitu,others
+255,1,Poly Bridge,others
+245,1,People edge,others
+246,1,Perfect Piano,others
+247,1,Perfect Viewer,others
+248,1,Photo Wonder,others
+249,1,Piano,others
+250,1,Piazza,others
+256,1,PostPay,others
+241,1,POOQ,others
+258,1,Prime Video,others
+260,1,Q.Feat,others
+262,1,QuickPic,others
+263,1,Q렌즈,others
+265,1,RX TIMER,others
+266,1,RadDog,others
+244,1,Party time,others
+240,1,PICNIC,others
+206,1,Metal Madness,others
+221,1,NH농협카드,others
+209,1,Mi 계산기,others
+212,1,Microsoft Launcher,others
+213,1,Mobile Print,others
+214,1,MobileCX,others
+216,1,My Application1,others
+218,1,NBA,others
+222,1,NH뱅킹,others
+239,1,PES 2019 PRO EVOLUTION SOCCER,others
+225,1,Nature Photo Effects,others
+226,1,NekoSushi,others
+228,1,Nintendo Switch Online,others
+229,1,Notion,others
+235,1,OneNote,others
+236,1,PAIGE,others
+129,1,Google PDF 뷰어,others
+126,1,Genius,others
+124,1,Galaxy Wearable,others
+43,1,Big Hunter,others
+32,1,Arduino bluetooth controller,others
+33,1,At Bat,others
+34,1,Atomas,others
+37,1,Avast Mobile Security,others
+40,1,Battery Doctor,others
+42,1,Big Finish,others
+44,1,Bill Letter,others
+29,1,App Lock,others
+45,1,Bleacher Report,others
+46,1,Bloomberg,others
+47,1,Blue Light Filter - Night Mode,others
+52,1,Bubble Shooter,others
+54,1,CGV포토티켓,others
+59,1,CNCITY에너지,others
+31,1,Arcane Tracker,others
+27,1,Amazon Shopping,shopping
+61,1,Cake,others
+11,1,AVS,others
+2,1,10000!,others
+4,1,1km,others
+5,1,29CM,others
+6,1,4shared,others
+9,1,ANOTHER EDEN,others
+10,1,ASTRO 파일 관리,others
+12,1,AZ Screen Recorder,others
+26,1,Amazon Kindle,others
+13,1,AccuBattery,others
+14,1,AdGuard,others
+19,1,AirBattery,others
+20,1,AirMapKorea,others
+21,1,AirVisual,others
+23,1,Alipay,others
+60,1,CYBOS Touch,others
+62,1,CakeTown,others
+119,1,Frip,shopping
+108,1,FastHub,others
+96,1,Escape Rooms,others
+99,1,ExpressVPN,others
+100,1,EyeFilter,others
+101,1,FANDOM,others
+105,1,FOW.KR,others
+107,1,Fantasy Bundesliga,others
+111,1,Fitbit,others
+90,1,EML Reader FREE,others
+112,1,Flipboard,others
+113,1,FocusMore,others
+114,1,Follower Analyzer,others
+116,1,Forest,others
+117,1,Forza,others
+118,1,Free DS For Android 6,others
+92,1,EXiTS,others
+89,1,E:LAND	E:AT,others
+63,1,Call of Thunder War,others
+75,1,DMB,others
+65,1,Canva,others
+67,1,CashLeaflet,others
+69,1,Citymapper,others
+70,1,Class101,shopping
+72,1,Coinnow,others
+74,1,Cut+Mix Studio,others
+76,1,DU Speed Booster,others
+88,1,Duo,others
+77,1,DU 배터리 세이버,others
+79,1,Doctor Who,others
+80,1,DraStic,others
+81,1,Dragon Strike: Puzzle RPG,others
+82,1,Draw It,others
+83,1,Dreamclass,others
+267,1,RealCalc,others
+268,1,Reddit,sns
+269,1,Rummikub,others
+457,1,디코드,shopping
+443,1,다이어트신,others
+445,1,대기오염정보,others
+447,1,대한항공,others
+449,1,도돌 런처,others
+451,1,듀오링고,others
+456,1,디즈니팝,others
+458,1,딩굴 키보드,others
+441,1,다이소 멤버십,others
+460,1,똑똑계산기,others
+461,1,라프텔,others
+463,1,레몬브릿지,others
+465,1,롤도우미,others
+467,1,롯데면세점,others
+470,1,루딘프,others
+442,1,다이소몰,others
+440,1,다음카페,sns
+472,1,리디북스,others
+1,1,1.1.1.1,others
+405,1,그린카,others
+407,1,기본홈(홈&앱서랍),others
+408,1,기억의 신,others
+410,1,꼼꼼달력메모,others
+411,1,꽁음따 시즌4,others
+412,1,나만의 실험실,others
+414,1,나무위키뷰어,others
+438,1,다음사전,others
+416,1,내 멤버십 카드,others
+419,1,냥코 대전쟁,others
+425,1,네이버 스마트보드,others
+426,1,네이버 앱스토어,others
+431,1,네이버 클라우드,others
+433,1,네이트,sns
+471,1,루리웹,sns
+473,1,리리앤코,others
+402,1,국제검진센터,others
+520,1,버즈 런처,others
+507,1,미미박스,others
+509,1,바비톡,others
+511,1,방치타임,others
+515,1,배터리 및 성능,others
+516,1,배틀그라운드,others
+518,1,버거킹,others
+524,1,번호안내 서비스,others
+502,1,무한의 계단,others
+525,1,벽돌깨기 퍼즐,others
+526,1,보안,others
+529,1,복부 근육 트레이팅,others
+530,1,봄 캘린더,others
+531,1,부동산	다이어트,others
+532,1,붕괴3rd,others
+505,1,미디어 저장공간,others
+501,1,무음모드,others
+475,1,리멤버,others
+485,1,멀티타이머,others
+477,1,리브메이트,others
+478,1,링크 공유,others
+479,1,마이	홈플러스,others
+481,1,마이리틀셰프,others
+483,1,만개의 레시피,others
+484,1,맥딜리버리,others
+488,1,메모G,others
+500,1,무비 메이커,others
+489,1,메모위젯,others
+492,1,메이비베이비,shopping
+496,1,모아락,others
+497,1,모아키 통합키보드,others
+498,1,모야모,sns
+499,1,몰테일,shopping
+404,1,그래핑 계산기 Mathlab,others
+399,1,공성삼국: 새 천하를 열다 Red,others
+270,1,SC제일은행,others
+325,1,TimeBlocks,others
+313,1,Syrup 월렛,others
+315,1,S플래너,others
+317,1,T pay,others
+321,1,THE COUPLE,others
+322,1,TVING,others
+324,1,The Weather Channel,others
+328,1,TouchVPN,others
+308,1,Spotify,others
+330,1,Tower Color,others
+331,1,Traffic Run!,others
+332,1,Turbo VPN,others
+337,1,T전화 통화,others
+339,1,U+Box (클라우드),others
+341,1,U+프로야구	(SKT,others
+311,1,StyleShare,sns
+307,1,Space Big Bang,others
+344,1,V LIVE,others
+292,1,Send Anywhere,others
+273,1,SOL알리미,others
+275,1,SSG.COM,shopping
+276,1,SSGPAY,others
+287,1,Samsung Pay (Watch plug-in),others
+289,1,Screen Off Button,others
+291,1,SecurityLogAgent,others
+295,1,Skype,sns
+306,1,Soundcamp,others
+298,1,SleepTown,others
+299,1,Smart Tools,others
+301,1,SmartThinQ,others
+302,1,SmartWorld,others
+304,1,SongsterrWeb,others
+305,1,Sound+,others
+342,1,U-OTP+,others
+346,1,Vingle,others
+397,1,고양이는 정말 귀여워,others
+384,1,zet,others
+377,1,m.Stock,others
+378,1,mVaccine for web,others
+380,1,page2,others
+381,1,pixiv,others
+382,1,tbs,others
+383,1,timetable-core,others
+385,1,µTorrent,others
+375,1,iSafe,others
+386,1,ミリシタ,others
+387,1,手机淘宝,others
+388,1,盒马,others
+390,1,가톨릭,others
+393,1,게임툴즈,others
+396,1,고양이가 귀여운,others
+376,1,kt M모바일,others
+374,1,gStrings,others
+348,1,VocalPitchMonitor,others
+359,1,WoW BfA Talent Calculator,others
+350,1,W Concept,shopping
+351,1,WSJ,others
+353,1,Walkr,others
+355,1,Whale,others
+357,1,Wi-Fi 다이렉트,others
+358,1,WiFi Mouse,others
+362,1,X-plore,others
+373,1,com.android.wallpapercropper,others
+363,1,XPlayer,others
+364,1,Xodo Docs,others
+365,1,Yoga VPN,others
+368,1,Y데이터박스,others
+369,1,ZUMO,sns
+371,1,blind,sns
+826,1,히어로칸타레,others
