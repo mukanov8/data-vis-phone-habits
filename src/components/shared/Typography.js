@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import theme from '../../theme'
 
 export const Heading = styled.h1`
-  color: ${props => props.theme.colors.black};
+  color: ${theme.colors.black};
   font-family: 'Inter, system-ui, sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu' !important;
   font-size: 32px;
   font-style: normal;
@@ -16,7 +17,7 @@ export const Heading = styled.h1`
 `
 
 export const Text = styled.header`
-  color: ${props => props.theme.colors.black};
+  color: ${theme.colors.black};
   font-size: 16px;
   font-style: normal;
   font-weight: normal;

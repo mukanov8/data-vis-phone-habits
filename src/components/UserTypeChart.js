@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Plot from 'react-plotly.js'
-import defaultTheme from '../themes/defaultTheme'
+import theme from '../theme'
 import { Text } from './shared/Typography'
+import { Button, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
+import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 
 const TIME_SLICES = 8
 
@@ -10,6 +12,9 @@ const UserTypeChart = () => {
   const getRandInt = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min
   }
+
+  const userTypes = ['Extreme', 'Moderate', 'Rare']
+  const [selectedUserType, setSelectedUserType] = useState('Extreme')
 
   const xData = [
     '0-3AM',
@@ -30,7 +35,7 @@ const UserTypeChart = () => {
     name: 'Health',
     type: 'bar',
     marker: {
-      color: defaultTheme.colors.red[900],
+      color: theme.colors.red[900],
     },
   }
   const traceOthers = {
@@ -39,7 +44,7 @@ const UserTypeChart = () => {
     name: 'Others',
     type: 'bar',
     marker: {
-      color: defaultTheme.colors.red[700],
+      color: theme.colors.red[700],
     },
   }
   const traceOs = {
@@ -48,7 +53,7 @@ const UserTypeChart = () => {
     name: 'OS',
     type: 'bar',
     marker: {
-      color: defaultTheme.colors.red[400],
+      color: theme.colors.red[400],
     },
   }
   const traceSns = {
@@ -57,7 +62,7 @@ const UserTypeChart = () => {
     name: 'SNS',
     type: 'bar',
     marker: {
-      color: defaultTheme.colors.red[100],
+      color: theme.colors.red[100],
     },
   }
 
@@ -68,15 +73,43 @@ const UserTypeChart = () => {
     width: 350,
     height: 350,
     title: {
-      text: 'Daily Moderate User Phone usage',
+      text: `Daily ${selectedUserType} User Phone usage`,
     },
   }
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <Text>
-        User <b>Type</b> Selection
-      </Text>
+      <div>
+        <Text>
+          User <b>Type</b> Selection
+        </Text>
+        <Menu>
+          {({ isOpen }) => (
+            <>
+              <MenuButton
+                my="8px"
+                colorScheme="red"
+                size="sm"
+                isActive={isOpen}
+                as={Button}
+                rightIcon={isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+              >
+                {selectedUserType}
+              </MenuButton>
+              <MenuList>
+                {userTypes.map((userType, i) => (
+                  <MenuItem
+                    key={userType + i.toString()}
+                    onClick={() => setSelectedUserType(userType)}
+                  >
+                    {userType}
+                  </MenuItem>
+                ))}
+              </MenuList>
+            </>
+          )}
+        </Menu>
+      </div>
       <Plot layout={layout} data={data} />
     </div>
   )
