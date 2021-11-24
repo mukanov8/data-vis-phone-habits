@@ -77,6 +77,9 @@ const useData = () => {
   }, [])
 
   const getEmotionsByHour = () => {
+    if (!emotionsByHour) {
+      return []
+    }
     return getArrayFromColumn(emotionsByHour, 'Emotion_change', true, false)
   }
 

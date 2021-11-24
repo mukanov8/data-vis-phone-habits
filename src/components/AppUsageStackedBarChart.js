@@ -3,15 +3,15 @@ import Plot from 'react-plotly.js'
 import { X_AXIS_HOURLY } from './../constants'
 import { Text } from './shared/Typography'
 
-const AppUsageEmotionChart = ({ selectedApps, filteredData }) => {
+const AppUsageEmotionChart = ({ selectedApps, appUsageByHour }) => {
   const data = []
   const len = X_AXIS_HOURLY.length
 
-  console.log(filteredData)
+  console.log(appUsageByHour)
   selectedApps.forEach(app => {
     data.push({
       x: X_AXIS_HOURLY,
-      y: filteredData[app.name],
+      y: appUsageByHour[app.name],
       type: 'bar',
       name: app.name,
       marker: {
@@ -39,7 +39,7 @@ const AppUsageEmotionChart = ({ selectedApps, filteredData }) => {
     height: 350,
     title: {
       text: `Hourly ${
-        selectedApps.length > 2 ? 'Apps' : 'App'
+        selectedApps.length > 1 ? 'Apps' : 'App'
       } Usage Histogram `,
     },
   }
@@ -49,7 +49,7 @@ const AppUsageEmotionChart = ({ selectedApps, filteredData }) => {
       <Text>
         Selected App <b>Usage</b>
       </Text>
-      {selectedApps.length > 1 && <Plot layout={layout} data={data} />}
+      <Plot layout={layout} data={data} />
     </div>
   )
 }

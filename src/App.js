@@ -13,6 +13,7 @@ import EmotionChart from './components/EmotionChart'
 import AppsSelection from './components/AppsSelection'
 import { useColorMode } from '@chakra-ui/react'
 import useData from './hooks/useData'
+import EmotionLineChart from './components/EmotionLineChart'
 
 const MainContainer = styled.div`
   width: 100%;
@@ -30,7 +31,7 @@ const RowContainer = styled.div`
 `
 
 function App() {
-  const { getAppsByHour } = useData()
+  const { getAppsByHour, getEmotionsByHour } = useData()
   const [appType, setAppType] = useState('SNS')
   const [selectedApps, setSelectedApps] = useState([
     // {
@@ -41,12 +42,17 @@ function App() {
     // },
   ])
 
-  const filteredData = React.useMemo(
+  const appUsageByHour = React.useMemo(
     () => getAppsByHour(selectedApps),
     [selectedApps, getAppsByHour]
   )
 
-  console.log({ filteredData })
+  const emotionsByHour = React.useMemo(
+    () => getEmotionsByHour(),
+    [getEmotionsByHour]
+  )
+
+  console.log({ emotionsByHour })
 
   const addAppToSelection = app => {
     if (!Object.values(selectedApps).includes(app.name)) {
@@ -85,11 +91,12 @@ function App() {
       <RowContainer>
         <AppUsageStackedBarChart
           selectedApps={selectedApps}
-          filteredData={filteredData}
+          appUsageByHour={appUsageByHour}
         />
       </RowContainer>
       <RowContainer>
-        <EmotionChart />
+        {/* <EmotionChart /> */}
+        <EmotionLineChart ydata={emotionsByHour} />
       </RowContainer>
     </MainContainer>
   )
