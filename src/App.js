@@ -30,21 +30,23 @@ const RowContainer = styled.div`
 `
 
 function App() {
-  const { appsByHour } = useData()
-
-  if (typeof appsByHour === DataFrame) {
-    // console.log(appsByHour.head())
-  }
-
+  const { getAppsByHour } = useData()
   const [appType, setAppType] = useState('SNS')
   const [selectedApps, setSelectedApps] = useState([
-    {
-      id: 0,
-      name: '',
-      value: 0,
-      color: '',
-    },
+    // {
+    //   id: 0,
+    //   name: '',
+    //   value: 0,
+    //   color: '',
+    // },
   ])
+
+  const filteredData = React.useMemo(
+    () => getAppsByHour(selectedApps),
+    [selectedApps, getAppsByHour]
+  )
+
+  console.log({ filteredData })
 
   const addAppToSelection = app => {
     if (!Object.values(selectedApps).includes(app.name)) {
@@ -81,7 +83,10 @@ function App() {
         />
       </RowContainer>
       <RowContainer>
-        <AppUsageStackedBarChart selectedApps={selectedApps} />
+        <AppUsageStackedBarChart
+          selectedApps={selectedApps}
+          filteredData={filteredData}
+        />
       </RowContainer>
       <RowContainer>
         <EmotionChart />

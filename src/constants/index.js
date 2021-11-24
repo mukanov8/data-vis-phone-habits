@@ -8,3 +8,9 @@ export const X_AXIS_HOURLY = [
   '18-21PM',
   '21-24PM',
 ]
+
+export const nameToDatasetId = {
+  YouTube: 'YouTube',
+  'Kakao Talk': '카카오톡',
+  Instagram: 'Instagram',
+}
