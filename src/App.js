@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-
 import styled from 'styled-components'
+import { DataFrame } from 'pandas-js'
+
 import AppsPieChart from './components/AppsPieChart'
 import AppsBarChart from './components/AppsBarChart'
 import UserTypeChart from './components/UserTypeChart'
@@ -10,6 +11,7 @@ import EmotionChart from './components/EmotionChart'
 
 import AppsSelection from './components/AppsSelection'
 import { useColorMode } from '@chakra-ui/react'
+import useData from './hooks/useData'
 
 const MainContainer = styled.div`
   width: 100%;
@@ -27,6 +29,12 @@ const RowContainer = styled.div`
 `
 
 function App() {
+  const { appsByHour } = useData()
+
+  if (typeof appsByHour === DataFrame) {
+    // console.log(appsByHour.head())
+  }
+
   const [appType, setAppType] = useState('SNS')
   const [selectedApps, setSelectedApps] = useState([])
 
