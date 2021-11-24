@@ -30,14 +30,19 @@ const AppsBarChart = ({ appType, addAppToSelection }) => {
   }
 
   const onClick = data => {
-    // console.log('interaction', data)
     var pn = ''
+
     console.log(data.points)
     for (var i = 0; i < data.points.length; i++) {
       pn = data.points[i].pointNumber
     }
     console.log('clicked on', yData[appType][pn])
-    addAppToSelection(yData[appType][pn])
+
+    addAppToSelection({
+      name: yData[appType][pn],
+      value: data.points[0].value,
+      color: data.points[0]['marker.color'],
+    })
   }
 
   return (

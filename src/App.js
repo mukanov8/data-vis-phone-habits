@@ -7,6 +7,7 @@ import AppsBarChart from './components/AppsBarChart'
 import UserTypeChart from './components/UserTypeChart'
 
 import { Heading } from './components/shared/Typography'
+import AppUsageStackedBarChart from './components/AppUsageStackedBarChart'
 import EmotionChart from './components/EmotionChart'
 
 import AppsSelection from './components/AppsSelection'
@@ -36,17 +37,25 @@ function App() {
   }
 
   const [appType, setAppType] = useState('SNS')
-  const [selectedApps, setSelectedApps] = useState([])
+  const [selectedApps, setSelectedApps] = useState([
+    {
+      id: 0,
+      name: '',
+      value: 0,
+      color: '',
+    },
+  ])
 
-  const addAppToSelection = appName => {
-    if (!selectedApps.includes(appName)) {
-      // if it's not already added
-      setSelectedApps([...selectedApps, appName])
+  const addAppToSelection = app => {
+    if (!Object.values(selectedApps).includes(app.name)) {
+      setSelectedApps([...selectedApps, app])
     }
   }
 
-  const removeAppFromSelection = appName => {
-    setSelectedApps(selectedApps.filter(app => app !== appName))
+  const removeAppFromSelection = targetApp => {
+    setSelectedApps(
+      Object.values(selectedApps).filter(app => app.name !== targetApp.name)
+    )
   }
 
   //there was a bug with chakra where default color mode was set to dark and could not be changed. So, this is a workaround for now.
@@ -70,6 +79,9 @@ function App() {
           selectedApps={selectedApps}
           removeAppFromSelection={removeAppFromSelection}
         />
+      </RowContainer>
+      <RowContainer>
+        <AppUsageStackedBarChart selectedApps={selectedApps} />
       </RowContainer>
       <RowContainer>
         <EmotionChart />

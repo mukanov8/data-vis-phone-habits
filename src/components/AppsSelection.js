@@ -1,7 +1,7 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { Text } from './shared/Typography'
-import theme from '../theme'
+import { Tooltip, Box } from '@chakra-ui/react'
 
 const MainContainer = styled.div`
   display: flex;
@@ -17,40 +17,37 @@ const GridContainer = styled.div`
   margin-top: 100px;
 `
 
-const SingleApp = styled.div`
-  height: 40px;
-  width: max-content;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 3px 10px;
-  border-radius: 5px;
-  border: 1px solid;
-  background-color: ${theme.colors.orange[400]};
-  cursor: pointer;
-  :hover {
-    background-color: ${theme.colors.red[700]};
-    color: ${theme.colors.red[100]};
-  }
-`
-
 const AppsSelection = ({ selectedApps, removeAppFromSelection }) => {
   return (
     <MainContainer>
       <Text>
         {' '}
-        <b> Selected Apps </b>{' '}
+        <b> Selected </b>Apps{' '}
       </Text>
 
       <GridContainer>
         {selectedApps.map((app, i) => {
+          if (app.name.length < 1) return <></>
           return (
-            <SingleApp
-              key={app + i.toString()}
-              onClick={() => removeAppFromSelection(app)}
-            >
-              {app}
-            </SingleApp>
+            <Tooltip label="Remove selection?">
+              <Box
+                bg={app.color}
+                _hover={{ bg: 'blackAlpha.800', color: 'whiteAlpha.900' }}
+                cursor="pointer"
+                width="max-content"
+                display="flex"
+                flexDirection="row"
+                alignItems="center"
+                p="6px 10px"
+                borderRadius="5px"
+                fontWeight="500"
+                fontSize="12px"
+                key={app.name + i.toString()}
+                onClick={() => removeAppFromSelection(app)}
+              >
+                {app.name}
+              </Box>
+            </Tooltip>
           )
         })}
       </GridContainer>
