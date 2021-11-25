@@ -6,6 +6,7 @@ import { Text } from './shared/Typography'
 import { Button, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 import { X_AXIS_HOURLY } from './../constants'
+import useData from '../hooks/useData'
 
 const TIME_SLICES = 8
 
@@ -17,33 +18,30 @@ const userTypes = [
 
 const UserTypeChart = ({ selectedUserType, setSelectedUserType }) => {
   const [label, setLabel] = useState('Extreme')
+  const { getUserTypeGrouped } = useData()
+
+  const userTypeGrouped = React.useMemo(
+    () => getUserTypeGrouped(selectedUserType),
+    [getUserTypeGrouped, selectedUserType]
+  )
 
   const getRandInt = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min
   }
 
-  const traceHealth = {
-    x: X_AXIS_HOURLY,
-    y: [...Array(TIME_SLICES).keys()].map(i => getRandInt(5, 15)),
-    name: 'Health',
-    type: 'bar',
-    marker: {
-      color: theme.colors.red[900],
-    },
-  }
   const traceOthers = {
     x: X_AXIS_HOURLY,
-    y: [...Array(TIME_SLICES).keys()].map(i => getRandInt(10, 25)),
+    y: userTypeGrouped.othersValues,
     name: 'Others',
     type: 'bar',
     marker: {
-      color: theme.colors.red[700],
+      color: theme.colors.red[100],
     },
   }
-  const traceOs = {
+  const traceShopping = {
     x: X_AXIS_HOURLY,
-    y: [...Array(TIME_SLICES).keys()].map(i => getRandInt(30, 50)),
-    name: 'OS',
+    y: userTypeGrouped.shoppingValues,
+    name: 'Shopping',
     type: 'bar',
     marker: {
       color: theme.colors.red[400],
@@ -51,15 +49,15 @@ const UserTypeChart = ({ selectedUserType, setSelectedUserType }) => {
   }
   const traceSns = {
     x: X_AXIS_HOURLY,
-    y: [...Array(TIME_SLICES).keys()].map(i => getRandInt(40, 60)),
+    y: userTypeGrouped.snsValues,
     name: 'SNS',
     type: 'bar',
     marker: {
-      color: theme.colors.red[100],
+      color: theme.colors.red[700],
     },
   }
 
-  const data = [traceHealth, traceOthers, traceOs, traceSns]
+  const data = [traceSns, traceOthers, traceShopping]
 
   const layout = {
     barmode: 'stack',
