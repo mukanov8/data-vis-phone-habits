@@ -71,6 +71,12 @@ const AppsBarChart = ({ appType, addAppToSelection }) => {
     })
   }
 
+  const selectedColors = () => {
+    if (appType === 'SNS') return Object.values(theme.colors.orange)
+    else if (appType === 'Shopping') return Object.values(theme.colors.pink)
+    return Object.values(theme.colors.blue)
+  }
+
   return (
     <div style={{ textAlign: 'center' }}>
       <Text>
@@ -94,7 +100,7 @@ const AppsBarChart = ({ appType, addAppToSelection }) => {
                 x: xData[appType],
                 type: 'bar',
                 marker: {
-                  color: Object.values(theme.colors.orange),
+                  color: selectedColors(),
                 },
               },
             ]}
