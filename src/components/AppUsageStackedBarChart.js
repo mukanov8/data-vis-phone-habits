@@ -34,7 +34,7 @@ const AppUsageEmotionChart = ({ selectedApps, appUsageByHour }) => {
 
   const layout = {
     barmode: 'group',
-    width: 400,
+    width: 800,
     height: 350,
     title: {
       text: `Hourly ${

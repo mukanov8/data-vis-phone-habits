@@ -77,7 +77,7 @@ const AppsPieChart = ({ appType, setAppType, userType }) => {
         <div>
           <Plot
             layout={{
-              width: 350,
+              width: 400,
               height: 350,
               title: {
                 text: 'App Usage Statistic of Moderate User',

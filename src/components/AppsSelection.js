@@ -6,7 +6,7 @@ import { Tooltip, Box } from '@chakra-ui/react'
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 400px;
   align-items: center;
 `
 
