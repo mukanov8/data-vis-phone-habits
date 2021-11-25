@@ -9,13 +9,18 @@ import { X_AXIS_HOURLY } from './../constants'
 
 const TIME_SLICES = 8
 
-const UserTypeChart = () => {
+const userTypes = [
+  { label: 'Extreme', value: 'extreme' },
+  { label: 'Moderate', value: 'moderate' },
+  { label: 'Rare', value: 'occational' },
+]
+
+const UserTypeChart = ({ selectedUserType, setSelectedUserType }) => {
+  const [label, setLabel] = useState('Extreme')
+
   const getRandInt = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min
   }
-
-  const userTypes = ['Extreme', 'Moderate', 'Rare']
-  const [selectedUserType, setSelectedUserType] = useState('Extreme')
 
   const traceHealth = {
     x: X_AXIS_HOURLY,
@@ -82,15 +87,18 @@ const UserTypeChart = () => {
                 as={Button}
                 rightIcon={isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
               >
-                {selectedUserType}
+                {label}
               </MenuButton>
               <MenuList>
                 {userTypes.map((userType, i) => (
                   <MenuItem
-                    key={userType + i.toString()}
-                    onClick={() => setSelectedUserType(userType)}
+                    key={userType.label + i.toString()}
+                    onClick={() => {
+                      setSelectedUserType(userType.value)
+                      setLabel(userType.label)
+                    }}
                   >
-                    {userType}
+                    {userType.label}
                   </MenuItem>
                 ))}
               </MenuList>

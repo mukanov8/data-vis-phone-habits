@@ -31,16 +31,18 @@ const RowContainer = styled.div`
 `
 
 function App() {
-  const { getAppsByHour, getEmotionsByHour } = useData()
   const [appType, setAppType] = useState('SNS')
+  const [selectedUserType, setSelectedUserType] = useState('extreme')
   const [selectedApps, setSelectedApps] = useState([
     // {
-    //   id: 0,
-    //   name: '',
-    //   value: 0,
-    //   color: '',
-    // },
-  ])
+      //   id: 0,
+      //   name: '',
+      //   value: 0,
+      //   color: '',
+      // },
+    ])
+    
+  const { getAppsByHour, getEmotionsByHour } = useData()
 
   const appUsageByHour = React.useMemo(
     () => getAppsByHour(selectedApps),
@@ -77,8 +79,8 @@ function App() {
     <MainContainer>
       <Heading>Users' phone usage habits for SNS marketers </Heading>
       <RowContainer>
-        <UserTypeChart />
-        <AppsPieChart appType={appType} setAppType={setAppType} />
+        <UserTypeChart setSelectedUserType={setSelectedUserType} selectedUserType={selectedUserType} />
+        <AppsPieChart appType={appType} setAppType={setAppType} userType={selectedUserType}/>
       </RowContainer>
       <RowContainer>
         <AppsBarChart appType={appType} addAppToSelection={addAppToSelection} />

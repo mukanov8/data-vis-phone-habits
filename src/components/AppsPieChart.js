@@ -12,9 +12,20 @@ import {
   Tooltip,
 } from '@chakra-ui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
+import useData from '../hooks/useData'
 
-const AppsPieChart = ({ appType, setAppType }) => {
-  const labels = ['SNS', 'OS', 'Health', 'Others']
+const AppsPieChart = ({ appType, setAppType, userType }) => {
+  const { getForegroundTimeByUserType } = useData()
+
+  const foregroundByUserType = React.useMemo(
+    () => getForegroundTimeByUserType(userType),
+    [userType, getForegroundTimeByUserType]
+  )
+
+  console.log({ foregroundByUserType })
+
+  const labels2 = Object.keys(foregroundByUserType)
+  const values = Object.values(foregroundByUserType)
 
   const onClick = data => {
     // console.log('interaction', data)
@@ -23,8 +34,8 @@ const AppsPieChart = ({ appType, setAppType }) => {
     for (var i = 0; i < data.points.length; i++) {
       pn = data.points[i].pointNumber
     }
-    console.log('clicked on', labels[pn])
-    setAppType(labels[pn])
+    console.log('clicked on', labels2[pn])
+    setAppType(labels2[pn])
   }
 
   return (
@@ -48,7 +59,7 @@ const AppsPieChart = ({ appType, setAppType }) => {
                 {appType ?? 'App Type'}
               </MenuButton>
               <MenuList>
-                {labels.map((label, i) => (
+                {labels2.map((label, i) => (
                   <MenuItem
                     key={label + i.toString()}
                     onClick={() => setAppType(label)}
@@ -61,6 +72,7 @@ const AppsPieChart = ({ appType, setAppType }) => {
           )}
         </Menu>
       </div>
+
       <Tooltip label="Click to select the app">
         <div>
           <Plot
@@ -74,8 +86,8 @@ const AppsPieChart = ({ appType, setAppType }) => {
             onClick={onClick}
             data={[
               {
-                values: [40, 23, 17, 20],
-                labels: labels,
+                values,
+                labels: labels2,
                 marker: {
                   colors: Object.values(theme.colors.purple),
                 },

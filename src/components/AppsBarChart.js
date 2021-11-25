@@ -10,24 +10,49 @@ const AppsBarChart = ({ appType, addAppToSelection }) => {
     return Math.floor(Math.random() * (max - min)) + min
   }
 
-  const xData = [...Array(9)].map((_, rowIndex) => getRandInt(0, 100))
-
-  xData.sort()
   const yData = {
     SNS: [
-      'Greendit',
-      'Bluedit',
-      'Reddit',
-      'Vkontakte',
-      'Facebook',
-      'Naver',
+      'NaverCafe',
+      'BAND',
+      'Everytime',
+      'NAVER',
+      'Messenger',
       'Instagram',
+      'Facebook',
       'YouTube',
       'Kakao Talk',
     ],
-    OS: ['Camera', 'Gallery', 'Notes', 'Compass'],
-    Health: ['Samsung Health', 'Runkeeper', 'Strava', 'Stridekick'],
-    Others: ['KaspiKz', 'Woori Bank', 'Toggl', 'Notion'],
+    Shopping: [
+      '에이블리',
+      'GMarket',
+      'CJ ONE',
+      '모바일교보문고',
+      '11번가',
+      '이마트몰',
+      'Starbucks',
+      '배달요기 요',
+      '위메프',
+      'Coupang',
+    ],
+
+    Others: [
+      'Logger',
+      'Camera',
+      'Google Play Store',
+      'Googe Play Service',
+      'Message',
+      'Settings',
+      'Paco',
+      'Polar Beat',
+      'Package installer',
+    ],
+  }
+
+  const xData = {
+    // values from dataframe just hardcoded here
+    SNS: [78, 48, 46, 29, 26, 26, 14, 10, 9, 7].reverse(),
+    Shopping: [18, 7, 7, 6, 6, 4, 4, 4, 3, 3].reverse(),
+    Others: [78, 78, 78, 78, 78, 77, 76, 76, 76, 75].reverse(),
   }
 
   const onClick = data => {
@@ -66,7 +91,7 @@ const AppsBarChart = ({ appType, addAppToSelection }) => {
               {
                 orientation: 'h',
                 y: yData[appType],
-                x: xData,
+                x: xData[appType],
                 type: 'bar',
                 marker: {
                   color: Object.values(theme.colors.orange),

@@ -9,6 +9,8 @@ const useData = () => {
   const [appsByWeek, setAppsByWeek] = React.useState(null)
   const [emotionsByHour, setEmotionsByHour] = React.useState(null)
   const [emotionsByWeek, setEmotionsByWeek] = React.useState(null)
+  const [foregroundTimeByUserType, setForegroundTimeByUserType] =
+    React.useState(null)
 
   const processCSV = (str, delim = ',') => {
     const headers = str.slice(0, str.indexOf('\n')).split(delim)
@@ -40,7 +42,6 @@ const useData = () => {
 
   React.useEffect(() => {
     const handleResponse = setFunction => async response => {
-      console.log(response)
       const reader = response.body.getReader()
       const result = await reader.read()
       const decoder = new TextDecoder('utf-8')
@@ -69,9 +70,15 @@ const useData = () => {
       }
     )
 
-    fetch('/processed_csvs/esm_data_processed_weekday.csv.csv').then(
+    fetch('/processed_csvs/esm_data_processed_weekday.csv').then(
       async response => {
         handleResponse(setEmotionsByWeek)(response)
+      }
+    )
+
+    fetch('/processed_csvs/foregroundTime_by_userType.csv').then(
+      async response => {
+        handleResponse(setForegroundTimeByUserType)(response)
       }
     )
   }, [])
@@ -126,11 +133,28 @@ const useData = () => {
     return getArrayFromColumn(appsByWeek, 'user_count', true)
   }
 
+  const getForegroundTimeByUserType = (userType = 'extreme') => {
+    if (!foregroundTimeByUserType) {
+      return []
+    }
+    const appsByUserType = foregroundTimeByUserType.to_json({
+      orient: 'records',
+    })
+    console.log('json', appsByUserType, userType)
+    const curData = appsByUserType.find(app => app.userType === userType)
+    if (!curData) {
+      return {}
+    }
+    delete curData.userType
+    return curData
+  }
+
   return {
     getEmotionsByHour,
     getEmotionsByWeek,
     getAppsByHour,
     getappsByWeek,
+    getForegroundTimeByUserType,
   }
 }
 
