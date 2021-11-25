@@ -89,7 +89,11 @@ const AppsPieChart = ({ appType, setAppType, userType }) => {
                 values,
                 labels: labels2,
                 marker: {
-                  colors: Object.values(theme.colors.purple),
+                  colors: [
+                    theme.colors.purple[100],
+                    theme.colors.purple[300],
+                    theme.colors.purple[500],
+                  ],
                 },
                 hoverinfo: 'label+percent',
                 type: 'pie',
