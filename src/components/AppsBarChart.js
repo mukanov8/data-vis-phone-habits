@@ -80,7 +80,7 @@ const AppsBarChart = ({ appType, addAppToSelection }) => {
         <div>
           <Plot
             layout={{
-              width: 350,
+              width: 400,
               height: 350,
               title: {
                 text: `${appType} Apps Sorted`,

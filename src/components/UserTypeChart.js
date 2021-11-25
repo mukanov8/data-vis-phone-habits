@@ -61,7 +61,7 @@ const UserTypeChart = ({ selectedUserType, setSelectedUserType }) => {
 
   const layout = {
     barmode: 'stack',
-    width: 350,
+    width: 400,
     height: 350,
     title: {
       text: `Daily ${selectedUserType} User Phone usage`,

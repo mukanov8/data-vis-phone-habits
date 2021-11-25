@@ -9,7 +9,7 @@ const EmotionLineChart = ({ ydata }) => {
     <Plot
       layout={{
         title: 'Average Emotion Change',
-        width: 400,
+        width: 800,
         height: 350,
       }}
       data={[
