@@ -5,7 +5,6 @@ import { Text } from './shared/Typography'
 
 const AppUsageEmotionChart = ({ selectedApps, appUsageByHour }) => {
   const data = []
-  const len = X_AXIS_HOURLY.length
 
   console.log(appUsageByHour)
   selectedApps.forEach(app => {

@@ -3,6 +3,7 @@ import React from 'react'
 import Plot from 'react-plotly.js'
 import theme from '../theme'
 import { Text } from './shared/Typography'
+import { Tooltip } from '@chakra-ui/react'
 
 const AppsBarChart = ({ appType, addAppToSelection }) => {
   const getRandInt = (min, max) => {
@@ -50,27 +51,31 @@ const AppsBarChart = ({ appType, addAppToSelection }) => {
       <Text>
         <b>App</b> Selection
       </Text>
-      <Plot
-        layout={{
-          width: 350,
-          height: 350,
-          title: {
-            text: `${appType} Apps Sorted`,
-          },
-        }}
-        onClick={onClick}
-        data={[
-          {
-            orientation: 'h',
-            y: yData[appType],
-            x: xData,
-            type: 'bar',
-            marker: {
-              color: Object.values(theme.colors.orange),
-            },
-          },
-        ]}
-      />
+      <Tooltip label="Click to select the app type">
+        <div>
+          <Plot
+            layout={{
+              width: 350,
+              height: 350,
+              title: {
+                text: `${appType} Apps Sorted`,
+              },
+            }}
+            onClick={onClick}
+            data={[
+              {
+                orientation: 'h',
+                y: yData[appType],
+                x: xData,
+                type: 'bar',
+                marker: {
+                  color: Object.values(theme.colors.orange),
+                },
+              },
+            ]}
+          />
+        </div>
+      </Tooltip>
     </div>
   )
 }

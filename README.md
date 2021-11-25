@@ -2,7 +2,7 @@
 
 ## User Habits Dashboard for SNS Marketers
 
-It is a simple dashboard for phone apps usage vizualization to help SNS marketers and professionals find out patterns in users’ phone usage habits
+A simple dashboard for phone apps usage vizualization to help SNS marketers and professionals find out patterns in users’ phone usage habits
 
 ## Project link
 

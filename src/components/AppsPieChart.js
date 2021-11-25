@@ -3,7 +3,14 @@ import React from 'react'
 import Plot from 'react-plotly.js'
 import theme from '../theme'
 import { Text } from './shared/Typography'
-import { Button, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
+import {
+  Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Tooltip,
+} from '@chakra-ui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 
 const AppsPieChart = ({ appType, setAppType }) => {
@@ -26,6 +33,7 @@ const AppsPieChart = ({ appType, setAppType }) => {
         <Text>
           App <b>Type</b> Selection
         </Text>
+
         <Menu>
           {({ isOpen }) => (
             <>
@@ -53,28 +61,31 @@ const AppsPieChart = ({ appType, setAppType }) => {
           )}
         </Menu>
       </div>
-
-      <Plot
-        layout={{
-          width: 350,
-          height: 350,
-          title: {
-            text: 'App Usage Statistic of Moderate User',
-          },
-        }}
-        onClick={onClick}
-        data={[
-          {
-            values: [40, 23, 17, 20],
-            labels: labels,
-            marker: {
-              colors: Object.values(theme.colors.purple),
-            },
-            hoverinfo: 'label+percent',
-            type: 'pie',
-          },
-        ]}
-      />
+      <Tooltip label="Click to select the app">
+        <div>
+          <Plot
+            layout={{
+              width: 350,
+              height: 350,
+              title: {
+                text: 'App Usage Statistic of Moderate User',
+              },
+            }}
+            onClick={onClick}
+            data={[
+              {
+                values: [40, 23, 17, 20],
+                labels: labels,
+                marker: {
+                  colors: Object.values(theme.colors.purple),
+                },
+                hoverinfo: 'label+percent',
+                type: 'pie',
+              },
+            ]}
+          />
+        </div>
+      </Tooltip>
     </div>
   )
 }

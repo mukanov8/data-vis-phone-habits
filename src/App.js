@@ -55,9 +55,8 @@ function App() {
   console.log({ emotionsByHour })
 
   const addAppToSelection = app => {
-    if (!Object.values(selectedApps).includes(app.name)) {
-      setSelectedApps([...selectedApps, app])
-    }
+    if (selectedApps.some(el => el.name === app.name)) return
+    setSelectedApps([...selectedApps, app])
   }
 
   const removeAppFromSelection = targetApp => {
