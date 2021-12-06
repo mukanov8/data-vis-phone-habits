@@ -98,6 +98,9 @@ const useData = () => {
   }
 
   const getEmotionsByWeek = () => {
+    if (!emotionsByWeek) {
+      return []
+    }
     return getArrayFromColumn(emotionsByWeek, 'Emotion_change', true, false)
   }
 
@@ -136,8 +139,40 @@ const useData = () => {
     return appValues
   }
 
-  const getappsByWeek = selectedApps => {
-    return getArrayFromColumn(appsByWeek, 'user_count', true)
+  const getAppsByWeek = selectedApps => {
+    // return getArrayFromColumn(appsByWeek, 'user_count', true)
+    if (!appsByWeek) {
+      return []
+    }
+    const apps = appsByWeek.to_json({ orient: 'records' })
+
+    const selectedAppsId = selectedApps.map(selectedApp => {
+      console.log(
+        'selected app name',
+        nameToDatasetId[selectedApp.name] || selectedApp.name
+      )
+      return nameToDatasetId[selectedApp.name] || ''
+    })
+
+    const appValues = {}
+
+    apps.forEach(app => {
+      const index = selectedAppsId.findIndex(appId => appId === app.name)
+
+      if (index !== -1) {
+        const appName = selectedApps[index].name
+        if (appName in appValues) {
+          appValues[appName] = [
+            ...appValues[appName],
+            parseInt(app.user_count, 10),
+          ]
+        } else {
+          appValues[appName] = [app.user_count]
+        }
+      }
+    })
+
+    return appValues
   }
 
   const getForegroundTimeByUserType = (userType = 'extreme') => {
@@ -189,7 +224,7 @@ const useData = () => {
     getEmotionsByHour,
     getEmotionsByWeek,
     getAppsByHour,
-    getappsByWeek,
+    getAppsByWeek,
     getForegroundTimeByUserType,
     getUserTypeGrouped,
   }

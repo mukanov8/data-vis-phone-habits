@@ -12,6 +12,7 @@ const AppsBarChart = ({ appType, addAppToSelection }) => {
 
   const yData = {
     SNS: [
+      'Slack',
       'NaverCafe',
       'BAND',
       'Everytime',

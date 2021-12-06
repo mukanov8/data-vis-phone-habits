@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { DataFrame } from 'pandas-js'
+import {
+  Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Tooltip,
+  useColorMode,
+} from '@chakra-ui/react'
+
+import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 
 import AppsPieChart from './components/AppsPieChart'
 import AppsBarChart from './components/AppsBarChart'
@@ -11,7 +21,6 @@ import AppUsageStackedBarChart from './components/AppUsageStackedBarChart'
 import EmotionChart from './components/EmotionChart'
 
 import AppsSelection from './components/AppsSelection'
-import { useColorMode } from '@chakra-ui/react'
 import useData from './hooks/useData'
 import EmotionLineChart from './components/EmotionLineChart'
 
@@ -30,6 +39,8 @@ const RowContainer = styled.div`
   justify-content: space-between;
 `
 
+const GROUPING_OPTIONS = ['Daily', 'Hourly']
+
 function App() {
   const [appType, setAppType] = useState('SNS')
   const [selectedUserType, setSelectedUserType] = useState('extreme')
@@ -41,17 +52,29 @@ function App() {
     //   color: '',
     // },
   ])
+  const [groupBy, setGroupBy] = useState('hourly')
 
-  const { getAppsByHour, getEmotionsByHour } = useData()
+  const { getAppsByHour, getEmotionsByHour, getAppsByWeek, getEmotionsByWeek } =
+    useData()
 
   const appUsageByHour = React.useMemo(
     () => getAppsByHour(selectedApps),
     [selectedApps, getAppsByHour]
   )
 
+  const appUsageByWeek = React.useMemo(
+    () => getAppsByWeek(selectedApps),
+    [selectedApps, getAppsByWeek]
+  )
+
   const emotionsByHour = React.useMemo(
     () => getEmotionsByHour(),
     [getEmotionsByHour]
+  )
+
+  const emotionsByWeek = React.useMemo(
+    () => getEmotionsByWeek(),
+    [getEmotionsByWeek]
   )
 
   console.log({ emotionsByHour })
@@ -97,14 +120,47 @@ function App() {
         />
       </RowContainer>
       <RowContainer>
+        <Menu>
+          {({ isOpen }) => (
+            <>
+              <MenuButton
+                my="8px"
+                colorScheme="purple"
+                size="sm"
+                isActive={isOpen}
+                as={Button}
+                rightIcon={isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+              >
+                {groupBy ?? 'Group by'}
+              </MenuButton>
+              <MenuList>
+                {GROUPING_OPTIONS.map((label, i) => (
+                  <MenuItem
+                    key={label + i.toString()}
+                    onClick={() => setGroupBy(label)}
+                  >
+                    {label}
+                  </MenuItem>
+                ))}
+              </MenuList>
+            </>
+          )}
+        </Menu>
+      </RowContainer>
+
+      <RowContainer>
         <AppUsageStackedBarChart
           selectedApps={selectedApps}
-          appUsageByHour={appUsageByHour}
+          dataToUse={groupBy === 'Hourly' ? appUsageByHour : appUsageByWeek}
+          groupBy={groupBy}
         />
       </RowContainer>
       <RowContainer>
         {/* <EmotionChart /> */}
-        <EmotionLineChart ydata={emotionsByHour} />
+        <EmotionLineChart
+          ydata={groupBy === 'Hourly' ? emotionsByHour : emotionsByWeek}
+          groupBy={groupBy}
+        />
       </RowContainer>
     </MainContainer>
   )

@@ -9,6 +9,16 @@ export const X_AXIS_HOURLY = [
   '21-24PM',
 ]
 
+export const X_AXIS_WEEKDAY = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday',
+]
+
 export const nameToDatasetId = {
   YouTube: 'YouTube',
   'Kakao Talk': '카카오톡',

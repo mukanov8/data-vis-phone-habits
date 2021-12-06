@@ -2,9 +2,9 @@ import React from 'react'
 import Plot from 'react-plotly.js'
 import theme from '../theme'
 
-import { X_AXIS_HOURLY } from '../constants'
+import { X_AXIS_HOURLY, X_AXIS_WEEKDAY } from '../constants'
 
-const EmotionLineChart = ({ ydata }) => {
+const EmotionLineChart = ({ ydata, groupBy }) => {
   return (
     <Plot
       layout={{
@@ -14,7 +14,7 @@ const EmotionLineChart = ({ ydata }) => {
       }}
       data={[
         {
-          x: X_AXIS_HOURLY,
+          x: groupBy === 'Hourly' ? X_AXIS_HOURLY : X_AXIS_WEEKDAY,
           y: ydata,
           type: 'scatter',
         },
