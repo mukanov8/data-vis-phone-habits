@@ -1,16 +1,16 @@
 import React from 'react'
 import Plot from 'react-plotly.js'
-import { X_AXIS_HOURLY } from './../constants'
+import { X_AXIS_HOURLY, X_AXIS_WEEKDAY } from './../constants'
 import { Text } from './shared/Typography'
 
-const AppUsageEmotionChart = ({ selectedApps, appUsageByHour }) => {
+const AppUsageEmotionChart = ({ selectedApps, dataToUse, groupBy }) => {
   const data = []
 
-  console.log(appUsageByHour)
+  console.log(dataToUse)
   selectedApps.forEach(app => {
     data.push({
-      x: X_AXIS_HOURLY,
-      y: appUsageByHour[app.name],
+      x: groupBy === 'Hourly' ? X_AXIS_HOURLY : X_AXIS_WEEKDAY,
+      y: dataToUse[app.name],
       type: 'bar',
       name: app.name,
       marker: {

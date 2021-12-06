@@ -12,6 +12,7 @@ const useData = () => {
   const [foregroundTimeByUserType, setForegroundTimeByUserType] =
     React.useState(null)
   const [userTypeGrouped, setUserTypeGrouped] = React.useState(null)
+  const [userTypeGroupedByWeek, setUserTypeGroupedByWeek] = React.useState(null)
 
   const processCSV = (str, delim = ',') => {
     const headers = str.slice(0, str.indexOf('\n')).split(delim)
@@ -88,6 +89,12 @@ const useData = () => {
         handleResponse(setUserTypeGrouped)(response)
       }
     )
+
+    fetch('processed_csvs/app_usage_by_user_type_weekday.csv').then(
+      async response => {
+        handleResponse(setUserTypeGroupedByWeek)(response)
+      }
+    )
   }, [])
 
   const getEmotionsByHour = () => {
@@ -98,6 +105,9 @@ const useData = () => {
   }
 
   const getEmotionsByWeek = () => {
+    if (!emotionsByWeek) {
+      return []
+    }
     return getArrayFromColumn(emotionsByWeek, 'Emotion_change', true, false)
   }
 
@@ -136,8 +146,40 @@ const useData = () => {
     return appValues
   }
 
-  const getappsByWeek = selectedApps => {
-    return getArrayFromColumn(appsByWeek, 'user_count', true)
+  const getAppsByWeek = selectedApps => {
+    // return getArrayFromColumn(appsByWeek, 'user_count', true)
+    if (!appsByWeek) {
+      return []
+    }
+    const apps = appsByWeek.to_json({ orient: 'records' })
+
+    const selectedAppsId = selectedApps.map(selectedApp => {
+      console.log(
+        'selected app name',
+        nameToDatasetId[selectedApp.name] || selectedApp.name
+      )
+      return nameToDatasetId[selectedApp.name] || ''
+    })
+
+    const appValues = {}
+
+    apps.forEach(app => {
+      const index = selectedAppsId.findIndex(appId => appId === app.name)
+
+      if (index !== -1) {
+        const appName = selectedApps[index].name
+        if (appName in appValues) {
+          appValues[appName] = [
+            ...appValues[appName],
+            parseInt(app.user_count, 10),
+          ]
+        } else {
+          appValues[appName] = [app.user_count]
+        }
+      }
+    })
+
+    return appValues
   }
 
   const getForegroundTimeByUserType = (userType = 'extreme') => {
@@ -156,8 +198,13 @@ const useData = () => {
     return curData
   }
 
-  const getUserTypeGrouped = (userType = 'extreme') => {
-    if (!userTypeGrouped) {
+  const getUserTypeGrouped = (
+    userType = 'extreme',
+    groupingType = 'Hourly' // Daily
+  ) => {
+    const dataToUse =
+      groupingType === 'Hourly' ? userTypeGrouped : userTypeGroupedByWeek
+    if (!dataToUse) {
       return {
         snsValues: [],
         shoppingValues: [],
@@ -165,8 +212,8 @@ const useData = () => {
       }
     }
 
-    const filteredData = userTypeGrouped.filter(
-      userTypeGrouped.get('userType').eq(userType)
+    const filteredData = dataToUse.filter(
+      dataToUse.get('userType').eq(userType)
     )
 
     const snsValues = getArrayFromColumn(filteredData, 'sns', true, false)
@@ -189,7 +236,7 @@ const useData = () => {
     getEmotionsByHour,
     getEmotionsByWeek,
     getAppsByHour,
-    getappsByWeek,
+    getAppsByWeek,
     getForegroundTimeByUserType,
     getUserTypeGrouped,
   }
