@@ -12,6 +12,7 @@ const useData = () => {
   const [foregroundTimeByUserType, setForegroundTimeByUserType] =
     React.useState(null)
   const [userTypeGrouped, setUserTypeGrouped] = React.useState(null)
+  const [userTypeGroupedByWeek, setUserTypeGroupedByWeek] = React.useState(null)
 
   const processCSV = (str, delim = ',') => {
     const headers = str.slice(0, str.indexOf('\n')).split(delim)
@@ -86,6 +87,12 @@ const useData = () => {
     fetch('/processed_csvs/app_usage_resampled_by_3hours_grouped.csv').then(
       async response => {
         handleResponse(setUserTypeGrouped)(response)
+      }
+    )
+
+    fetch('processed_csvs/app_usage_by_user_type_weekday.csv').then(
+      async response => {
+        handleResponse(setUserTypeGroupedByWeek)(response)
       }
     )
   }, [])
@@ -191,8 +198,13 @@ const useData = () => {
     return curData
   }
 
-  const getUserTypeGrouped = (userType = 'extreme') => {
-    if (!userTypeGrouped) {
+  const getUserTypeGrouped = (
+    userType = 'extreme',
+    groupingType = 'Hourly' // Daily
+  ) => {
+    const dataToUse =
+      groupingType === 'Hourly' ? userTypeGrouped : userTypeGroupedByWeek
+    if (!dataToUse) {
       return {
         snsValues: [],
         shoppingValues: [],
@@ -200,8 +212,8 @@ const useData = () => {
       }
     }
 
-    const filteredData = userTypeGrouped.filter(
-      userTypeGrouped.get('userType').eq(userType)
+    const filteredData = dataToUse.filter(
+      dataToUse.get('userType').eq(userType)
     )
 
     const snsValues = getArrayFromColumn(filteredData, 'sns', true, false)

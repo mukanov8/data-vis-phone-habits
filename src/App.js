@@ -52,7 +52,7 @@ function App() {
     //   color: '',
     // },
   ])
-  const [groupBy, setGroupBy] = useState('hourly')
+  const [groupBy, setGroupBy] = useState('Hourly')
 
   const { getAppsByHour, getEmotionsByHour, getAppsByWeek, getEmotionsByWeek } =
     useData()
